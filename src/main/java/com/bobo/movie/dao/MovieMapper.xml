@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bobo.movie.dao.MovieMapper">
+
+  <update id="update">
+  update t_movie set status =#{status} where id =#{id}
+  
+  
+  </update>
+
+
+
+	<select id="selects" resultType="movie">
+
+		select * from t_movie
+		<where>
+			<if test="name!='' and name!=null">
+				name like "%" #{name}"%"
+
+			</if>
+
+			<if test="actor!='' and actor!=null">
+				and actor like "%" #{actor}"%"
+
+			</if>
+			<if test="year!=0 and year!=null">
+				and year =#{year}
+
+			</if>
+			<if test="uptimeStart!='' and uptimeStart!=null">
+				and uptime >=#{uptimeStart}
+
+			</if>
+			<if test="uptimeEnd!='' and uptimeEnd!=null">
+				and uptime &lt;=#{uptimeEnd}
+
+			</if>
+			<if test="priceStart!=0 and priceStart!=null">
+				and price>=#{priceStart}
+
+			</if>
+			<if test="priceEnd!=0 and priceEnd!=null">
+				and price &lt;=#{priceEnd}
+
+			</if>
+
+			<if test="durationStart!=0 and durationStart!=null">
+				and duration>=#{durationStart}
+
+			</if>
+			<if test="durationEnd!=0 and durationEnd!=null">
+				and duration &lt;=#{durationEnd}
+
+			</if>
+
+
+
+
+		</where>
+
+
+
+
+
+
+		<if test="orderByColumn!=null and orderByColumn!=''">
+			order by ${orderByColumn} ${orderByMethod}
+
+		</if>
+	</select>
+
+
+
+
+
+</mapper>
+
