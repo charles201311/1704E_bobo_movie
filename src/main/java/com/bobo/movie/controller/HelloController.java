@@ -17,7 +17,13 @@ package com.bobo.movie.controller;
  * @author: charles
  * @date: 2019年8月7日 上午11:16:31  
  */
+
+
+
 public class HelloController {
 
+
 	public void test2() {}
+
+	public void test1(){}
 }
