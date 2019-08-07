@@ -20,7 +20,5 @@ package com.bobo.movie.controller;
 public class HelloController {
 
 	//-----------111111111111111111111
-	//---------333333333333
 	// -----------22222222222222
-
 }
