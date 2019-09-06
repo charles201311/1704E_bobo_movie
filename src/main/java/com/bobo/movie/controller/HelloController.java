@@ -22,7 +22,7 @@ package com.bobo.movie.controller;
 
 public class HelloController {
 
-
+// 2232322222
 	public void test2() {}
 
 	public void test1(){}
